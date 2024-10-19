@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
+import { useMoviesTableData } from "@/action/globalStore";
 
 export default function HomePage() {
+  const { data, setPage, page } = useMoviesTableData();
+  const skip = 5;
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b">
+      {/* <header className="border-b">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold">
             MidCon Tips
@@ -31,48 +36,71 @@ export default function HomePage() {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
 
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8 w-2/3">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-2/3">
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle>Please verify that you are human.</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Button>Click to verify</Button>
-              </CardContent>
-            </Card>
-
-            {[1, 2, 3].map((post) => (
-              <Card key={post} className="mb-8">
-                <CardHeader>
-                  <CardTitle>
-                    <Link href={`/post/${post}`} className="hover:underline">
-                      Blog Post Title {post}
-                    </Link>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    This is a preview of blog post {post}. Click the title to
-                    read more...
-                  </p>
-                  <div className="text-sm text-muted-foreground">
-                    <span>ADMIN</span> / <span>MAY {30 - post}, 2024</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {Object.keys(data)
+              .slice((page - 1) * skip, (page - 1) * skip + skip)
+              .map((post) => (
+                <Card key={post} className="mb-8">
+                  {console.log(post, data[post])}
+                  <CardHeader>
+                    <CardTitle>
+                      <Link
+                        href={`/post/${encodeURIComponent(
+                          post.replace(/ /g, "-")
+                        )}`}
+                        className="hover:underline"
+                      >
+                        {post}
+                      </Link>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4">
+                      {data[post].introduction}
+                    </p>
+                    {/* <div className="text-sm text-muted-foreground">
+                    <span>ADMIN</span> / <span>MAY {30 }, 2024</span>
+                  </div> */}
+                  </CardContent>
+                </Card>
+              ))}
 
             <div className="flex justify-between items-center mt-8">
-              <Button variant="outline">Previous</Button>
+              <Button
+                variant="outline"
+                disabled={page === 1}
+                onClick={() => setPage(page - 1)}
+              >
+                Previous
+              </Button>
               <div className="flex space-x-2">
-                <Button variant="outline">1</Button>
-                <Button variant="outline">2</Button>
+                {Array.from({
+                  length: Math.ceil((Object.keys(data).length || 0) / 5),
+                }).map((item: any, i) => (
+                  <>
+                    <Button
+                      variant={page === i + 1 ? "default" : "outline"}
+                      key={i}
+                      onClick={() => setPage(i + 1)}
+                    >
+                      {i + 1}
+                    </Button>
+                  </>
+                ))}
               </div>
-              <Button>Next</Button>
+              <Button
+                variant="outline"
+                disabled={
+                  page === Math.ceil((Object.keys(data).length || 0) / 5)
+                }
+                onClick={() => setPage(page + 1)}
+              >
+                Next
+              </Button>
             </div>
           </div>
 
@@ -114,12 +142,6 @@ export default function HomePage() {
           </aside>
         </div>
       </main>
-
-      <footer className="border-t">
-        <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-          Copyright © 2024 - MidCon
-        </div>
-      </footer>
     </div>
   );
 }
