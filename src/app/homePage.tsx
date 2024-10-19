@@ -45,7 +45,6 @@ export default function HomePage() {
               .slice((page - 1) * skip, (page - 1) * skip + skip)
               .map((post) => (
                 <Card key={post} className="mb-8">
-                  {console.log(post, data[post])}
                   <CardHeader>
                     <CardTitle>
                       <Link
