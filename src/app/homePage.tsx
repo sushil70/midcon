@@ -5,10 +5,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
 import { useMoviesTableData } from "@/action/globalStore";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const { data, setPage, page } = useMoviesTableData();
   const skip = 5;
+
+  const [filteredData, setFilteredData] = useState(data);
+  const [search, setSearch] = useState("");
+  const [suggestedData, setSuggestedData] = useState<string[]>([]);
+
+  useEffect(() => {
+    setSuggestedData(
+      Object.keys(data)
+        .sort(() => 0.5 - Math.random()) // Shuffle array
+        .slice(0, 4)
+    );
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* <header className="border-b">
@@ -41,7 +55,7 @@ export default function HomePage() {
       <main className="flex-grow container mx-auto px-4 py-8 w-2/3">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-2/3">
-            {Object.keys(data)
+            {Object.keys(filteredData)
               .slice((page - 1) * skip, (page - 1) * skip + skip)
               .map((post) => (
                 <Card key={post} className="mb-8">
@@ -59,7 +73,7 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      {data[post].introduction}
+                      {filteredData[post].introduction}
                     </p>
                     {/* <div className="text-sm text-muted-foreground">
                     <span>ADMIN</span> / <span>MAY {30 }, 2024</span>
@@ -69,16 +83,20 @@ export default function HomePage() {
               ))}
 
             <div className="flex justify-between items-center mt-8">
-              <Button
-                variant="outline"
-                disabled={page === 1}
-                onClick={() => setPage(page - 1)}
-              >
-                Previous
-              </Button>
+              {Object.keys(filteredData).length > 0 && (
+                <Button
+                  variant="outline"
+                  disabled={page === 1}
+                  onClick={() => setPage(page - 1)}
+                >
+                  Previous
+                </Button>
+              )}
               <div className="flex space-x-2">
                 {Array.from({
-                  length: Math.ceil((Object.keys(data).length || 0) / 5),
+                  length: Math.ceil(
+                    (Object.keys(filteredData).length || 0) / 5
+                  ),
                 }).map((item: any, i) => (
                   <>
                     <Button
@@ -91,15 +109,18 @@ export default function HomePage() {
                   </>
                 ))}
               </div>
-              <Button
-                variant="outline"
-                disabled={
-                  page === Math.ceil((Object.keys(data).length || 0) / 5)
-                }
-                onClick={() => setPage(page + 1)}
-              >
-                Next
-              </Button>
+              {Object.keys(filteredData).length > 0 && (
+                <Button
+                  variant="outline"
+                  disabled={
+                    page ===
+                    Math.ceil((Object.keys(filteredData).length || 0) / 5)
+                  }
+                  onClick={() => setPage(page + 1)}
+                >
+                  Next
+                </Button>
+              )}
             </div>
           </div>
 
@@ -110,31 +131,51 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <form className="flex space-x-2">
-                  <Input placeholder="Search..." />
-                  <Button type="submit">Search</Button>
+                  <Input
+                    placeholder="Search..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <Button
+                    type="submit"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const filteredDataTemp: any = {};
+                      Object.keys(data).map((post) => {
+                        if (post.toLowerCase().includes(search.toLowerCase())) {
+                          filteredDataTemp[post] = data[post];
+                        }
+                      });
+                      setFilteredData(filteredDataTemp);
+                    }}
+                  >
+                    Search
+                  </Button>
                 </form>
               </CardContent>
             </Card>
 
             <Card className="mt-8">
               <CardHeader>
-                <CardTitle>Categories</CardTitle>
+                <CardTitle>Suggested</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  <li>
-                    <Link href="/category/tech" className="hover:underline">
-                      tech
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/category/uncategorized"
-                      className="hover:underline"
-                    >
-                      Uncategorized
-                    </Link>
-                  </li>
+                  {suggestedData.map((item, i) => (
+                    <li key={i}>
+                      <Link
+                        href={`/post/${encodeURIComponent(
+                          item.replace(/ /g, "-")
+                        )}`}
+                        className="block hover:underline text-lg font-semibold"
+                      >
+                        {item}
+                      </Link>
+                      <div className="text-sm text-muted-foreground mb-10">
+                        {data[item]?.introduction?.slice(0, 100)}...
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>

@@ -843,15 +843,9 @@ const useMoviesTableData = create<any>()((set) => ({
             {
               subtitle: "Mental and Physical Effects",
               list: [
-                {
-                  text: "Mental Fatigue: Constant notifications and multitasking can overstimulate the brain, leading to decision fatigue and reduced focus.",
-                },
-                {
-                  text: "Disrupted Sleep: The blue light emitted by screens interferes with the production of melatonin, the hormone that regulates sleep.",
-                },
-                {
-                  text: "Decreased Productivity: Excessive screen time can lead to procrastination and reduced efficiency in completing tasks.",
-                },
+                "Mental Fatigue: Constant notifications and multitasking can overstimulate the brain, leading to decision fatigue and reduced focus.",
+                "Disrupted Sleep: The blue light emitted by screens interferes with the production of melatonin, the hormone that regulates sleep.",
+                "Decreased Productivity: Excessive screen time can lead to procrastination and reduced efficiency in completing tasks.",
               ],
             },
           ],
@@ -883,15 +877,9 @@ const useMoviesTableData = create<any>()((set) => ({
             {
               subtitle: "Screen-Free Activities",
               list: [
-                {
-                  text: "Outdoor Activities: Spend time in nature, whether it’s hiking, biking, or simply taking a walk in the park. Nature has been shown to reduce stress and improve mental clarity.",
-                },
-                {
-                  text: "Reading: Pick up a physical book or magazine instead of reading on a screen. This helps reduce eye strain and provides a break from digital devices.",
-                },
-                {
-                  text: "Hobbies: Use the time to pursue hobbies such as painting, cooking, or knitting. These activities allow you to be creative and productive without relying on technology.",
-                },
+                "Outdoor Activities: Spend time in nature, whether it’s hiking, biking, or simply taking a walk in the park. Nature has been shown to reduce stress and improve mental clarity.",
+                "Reading: Pick up a physical book or magazine instead of reading on a screen. This helps reduce eye strain and provides a break from digital devices.",
+                "Hobbies: Use the time to pursue hobbies such as painting, cooking, or knitting. These activities allow you to be creative and productive without relying on technology.",
               ],
             },
           ],
@@ -906,15 +894,9 @@ const useMoviesTableData = create<any>()((set) => ({
             {
               subtitle: "Screen Time Tracking Tools",
               list: [
-                {
-                  text: "Apple Screen Time: Built into iOS devices, this tool helps you monitor how much time you spend on apps and websites, and allows you to set daily limits.",
-                },
-                {
-                  text: "Digital Wellbeing on Android: Similar to Apple’s Screen Time, Digital Wellbeing tracks your app usage and lets you set restrictions.",
-                },
-                {
-                  text: "RescueTime: This app runs in the background of your computer or phone, tracking time spent on websites and apps, and offering insights into how you can be more productive.",
-                },
+                "Apple Screen Time: Built into iOS devices, this tool helps you monitor how much time you spend on apps and websites, and allows you to set daily limits.",
+                "Digital Wellbeing on Android: Similar to Apple’s Screen Time, Digital Wellbeing tracks your app usage and lets you set restrictions.",
+                "RescueTime: This app runs in the background of your computer or phone, tracking time spent on websites and apps, and offering insights into how you can be more productive.",
               ],
             },
           ],

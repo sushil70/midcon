@@ -15,7 +15,7 @@ export default async function Header() {
                   HOME
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/privacy-policy" className="hover:underline">
                   PRIVACY POLICY
                 </Link>
@@ -24,7 +24,7 @@ export default async function Header() {
                 <Link href="/tech" className="hover:underline">
                   TECH
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
