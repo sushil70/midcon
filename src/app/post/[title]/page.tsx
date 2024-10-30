@@ -42,7 +42,7 @@ export default function Details() {
       <div className="flex ">
         <div className="w-2/3">
           <div className="width-full max-w-2xl mx-auto px-4 py-16" key={id}>
-            <h1 className="text-6xl pb-10 text-gray-950 font-extrabold  ">
+            <h1 className="text-4xl pb-10 text-gray-950 font-extrabold  ">
               {
                 Object.keys(data).filter(
                   (key) => key.replace(/ /g, "-") === id.replace(/%3A/g, ":")

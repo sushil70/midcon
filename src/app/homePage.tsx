@@ -6,14 +6,32 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
 import { useMoviesTableData } from "@/action/globalStore";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function HomePage() {
+  const params = useSearchParams();
+  const category: any = params.get("category");
+
   const { data, setPage, page } = useMoviesTableData();
   const skip = 5;
 
   const [filteredData, setFilteredData] = useState(data);
   const [search, setSearch] = useState("");
   const [suggestedData, setSuggestedData] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (category) {
+      const fdata: any = {};
+      Object.keys(data).forEach((key) => {
+        if (data[key].category.includes(category)) {
+          fdata[key] = data[key];
+        }
+      });
+      setFilteredData(fdata);
+    } else {
+      setFilteredData(data);
+    }
+  }, [data, category]);
 
   useEffect(() => {
     setSuggestedData(
@@ -55,6 +73,12 @@ export default function HomePage() {
       <main className="flex-grow container mx-auto px-4 py-8 w-2/3">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-2/3">
+            {" "}
+            {category && (
+              <div className="mb-8 bg-slate-300 h-[70px] font-bold text-3xl pl-6 flex items-center rounded-md">
+                Category: {category}
+              </div>
+            )}
             {Object.keys(filteredData)
               .slice((page - 1) * skip, (page - 1) * skip + skip)
               .map((post) => (
@@ -81,7 +105,6 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
               ))}
-
             <div className="flex justify-between items-center mt-8">
               {Object.keys(filteredData).length > 0 && (
                 <Button

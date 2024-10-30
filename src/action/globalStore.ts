@@ -116,6 +116,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Tech"],
     },
     "Productivity Tips for Remote Work": {
       introduction:
@@ -264,6 +265,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information", "Lifestyle"],
     },
     "Financial Literacy": {
       introduction:
@@ -400,6 +402,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Finance", "Lifestyle"],
     },
     "Health and Wellness": {
       introduction:
@@ -529,6 +532,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health"],
     },
     Sustainability: {
       introduction:
@@ -629,6 +633,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Lifestyle"],
     },
     FinancialWellness: {
       introduction:
@@ -730,6 +735,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Finance"],
     },
     "Self-Care for Mental Well-Being": {
       introduction:
@@ -819,6 +825,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health", "Lifestyle"],
     },
     "Digital Detox": {
       introduction:
@@ -902,6 +909,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Tech"],
     },
     "Building Strong Relationships: Communication and Emotional Intelligence": {
       introduction:
@@ -985,6 +993,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health", "Lifestyle", "Information"],
     },
     "Embracing Minimalism for a Simplified Life": {
       introduction:
@@ -1063,6 +1072,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Lifestyle", "Information"],
     },
     "Boosting Productivity: Techniques for Getting More Done": {
       introduction:
@@ -1155,6 +1165,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Tech", "Information"],
     },
     "Travel Planning: How to Prepare for a Stress-Free Vacation": {
       introduction:
@@ -1246,6 +1257,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Lifestyle", "Information"],
     },
     "Green Living": {
       introduction:
@@ -1320,6 +1332,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health", "Lifestyle"],
     },
     "Time Management": {
       introduction:
@@ -1408,6 +1421,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Lifestyle", "Information"],
     },
     "Career Growth: How to Advance in Your Professional Life": {
       introduction:
@@ -1499,6 +1513,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information", "Finance"],
     },
     "Creative Thinking: How to Cultivate Innovative Ideas": {
       introduction:
@@ -1588,6 +1603,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     Mindfulness: {
       introduction:
@@ -1699,6 +1715,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health"],
     },
     "Healthy Eating": {
       introduction:
@@ -1782,6 +1799,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health", "Lifestyle"],
     },
     "Stress Management": {
       introduction:
@@ -1868,6 +1886,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Lifestyle"],
     },
     "Effective Communication": {
       introduction:
@@ -1955,6 +1974,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Time Management Best": {
       introduction:
@@ -2044,6 +2064,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Digital Detox Best": {
       introduction:
@@ -2128,6 +2149,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Tech", "Information"],
     },
     "Emotional Intelligence": {
       introduction:
@@ -2227,6 +2249,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Tech", "Information"],
     },
     "Sustainable Living: Making Eco-Friendly Choices": {
       introduction:
@@ -2310,6 +2333,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health"],
     },
     "Creative Thinking: Unlocking Your Innovative Potential": {
       introduction:
@@ -2393,6 +2417,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Mindfulness: Cultivating Present-Moment Awareness": {
       introduction:
@@ -2464,6 +2489,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Healthy Eating Best": {
       introduction:
@@ -2535,6 +2561,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health"],
     },
     "Personal Finance": {
       introduction:
@@ -2619,6 +2646,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information", "Finance", "Lifestyle"],
     },
     "Stress Management Best": {
       introduction:
@@ -2699,6 +2727,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Health", "Information"],
     },
     "Effective Communication Best": {
       introduction:
@@ -2782,6 +2811,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Resilience: Building Strength in the Face of Adversity": {
       introduction:
@@ -2865,6 +2895,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Crisis Management: Navigating Difficult Situations Effectively": {
       introduction:
@@ -2948,6 +2979,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information"],
     },
     "Healthy Relationships: Fostering Meaningful Connections": {
       introduction:
@@ -3031,6 +3063,7 @@ const useMoviesTableData = create<any>()((set) => ({
           ],
         },
       ],
+      category: ["Information", "Lifestyle"],
     },
   },
   page: 1,

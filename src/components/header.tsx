@@ -15,6 +15,18 @@ export default async function Header() {
                   HOME
                 </Link>
               </li>
+              {["Health", "Tech", "Information", "Finance", "Lifestyle"].map(
+                (category) => (
+                  <li key={category}>
+                    <Link
+                      href={`/?category=${category}`}
+                      className="hover:underline"
+                    >
+                      {category}
+                    </Link>
+                  </li>
+                )
+              )}
               {/* <li>
                 <Link href="/privacy-policy" className="hover:underline">
                   PRIVACY POLICY
