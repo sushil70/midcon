@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
 import { useMoviesTableData } from "@/action/globalStore";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 export default function HomePage() {
   const params = useSearchParams();
@@ -83,6 +84,17 @@ export default function HomePage() {
               .slice((page - 1) * skip, (page - 1) * skip + skip)
               .map((post) => (
                 <Card key={post} className="mb-8">
+                  <div className="w-full">
+                    <Image
+                      alt={post}
+                      src={filteredData[post].images[0]}
+                      width={1000}
+                      height={300}
+                      object-fit="fill"
+                      // object-fit="cover"
+                      // fill
+                    />
+                  </div>
                   <CardHeader>
                     <CardTitle>
                       <Link

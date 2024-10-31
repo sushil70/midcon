@@ -117,6 +117,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Tech"],
+      images: [
+        "https://elie.net/_astro/stay-safe-online-in-10-easy-steps.6p41zAJo.jpg",
+      ],
     },
     "Productivity Tips for Remote Work": {
       introduction:
@@ -266,6 +269,7 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information", "Lifestyle"],
+      images: ["https://www.timechamp.io/images/comon-productivity.webp"],
     },
     "Financial Literacy": {
       introduction:
@@ -403,6 +407,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Finance", "Lifestyle"],
+      images: [
+        "https://blogs.dpuerp.in/images/blog/70/10971-the-importance-of-financial-literacy.jpg",
+      ],
     },
     "Health and Wellness": {
       introduction:
@@ -533,6 +540,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health"],
+      images: [
+        "https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY",
+      ],
     },
     Sustainability: {
       introduction:
@@ -634,6 +644,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Lifestyle"],
+      images: [
+        "https://www.twi-global.com/CachedImage.axd?ImageName=What-is-Sustainability.jpg&ImageWidth=784&ImageHeight=379&ImageVersionID=102110&ImageModified=20201029133929",
+      ],
     },
     FinancialWellness: {
       introduction:
@@ -736,6 +749,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Finance"],
+      images: [
+        "https://barnumfinancialgroup.com/wp-content/uploads/2022/01/Financial-Wellness-1024x680.png",
+      ],
     },
     "Self-Care for Mental Well-Being": {
       introduction:
@@ -826,6 +842,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health", "Lifestyle"],
+      images: [
+        "https://media.licdn.com/dms/image/D4E12AQGr6jnEpZpW9w/article-cover_image-shrink_720_1280/0/1684769332523?e=2147483647&v=beta&t=1Q7WDeMnA6-1I-TkQA1KJfJXLP_apMwgqlfHMeeqNDg",
+      ],
     },
     "Digital Detox": {
       introduction:
@@ -910,6 +929,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Tech"],
+      images: [
+        "https://blocksite.co/wp-content/uploads/2024/05/how-to-do-a-digital-detox-using-BS.png",
+      ],
     },
     "Building Strong Relationships: Communication and Emotional Intelligence": {
       introduction:
@@ -994,6 +1016,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health", "Lifestyle", "Information"],
+      images: [
+        "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/56718/images/z80GcK9tQjKWlC4tyBwo_teamwork-emotional-intelligence-people-builders-ush-dhanak.jpg",
+      ],
     },
     "Embracing Minimalism for a Simplified Life": {
       introduction:
@@ -1073,6 +1098,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Lifestyle", "Information"],
+      images: [
+        "https://cdn.shopify.com/s/files/1/0100/2677/8681/files/1_d2c08f00-ba86-46f2-8e4f-58f6489fc370_1024x1024.png?v=1699255976",
+      ],
     },
     "Boosting Productivity: Techniques for Getting More Done": {
       introduction:
@@ -1166,6 +1194,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Tech", "Information"],
+      images: [
+        "https://www.atlassian.com/blog/wp-content/uploads/2023/03/1231_atlassian_10-ways-to-boost-your-productivity-at-work_1120x545@2x-scaled.jpg",
+      ],
     },
     "Travel Planning: How to Prepare for a Stress-Free Vacation": {
       introduction:
@@ -1258,6 +1289,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Lifestyle", "Information"],
+      images: [
+        "https://www.realsimple.com/thmb/yKGjaIuWpkmTpegiZkJ3ukXklIQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/stress-free-family-vacation-1-972a8e92875d4942afe77946fa1048f9.jpg",
+      ],
     },
     "Green Living": {
       introduction:
@@ -1333,6 +1367,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health", "Lifestyle"],
+      images: [
+        "https://boxergy.co.uk/wp-content/uploads/2024/03/green-living-house.jpeg",
+      ],
     },
     "Time Management": {
       introduction:
@@ -1422,6 +1459,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Lifestyle", "Information"],
+      images: [
+        "https://leapmax.ai/wp-content/uploads/2024/02/time-management-skills-.webp",
+      ],
     },
     "Career Growth: How to Advance in Your Professional Life": {
       introduction:
@@ -1514,6 +1554,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information", "Finance"],
+      images: [
+        "https://epaouydin3q.exactdn.com/wp-content/uploads/2024/02/Personalized-Career-Development.jpg?strip=all&lossy=1&ssl=1",
+      ],
     },
     "Creative Thinking: How to Cultivate Innovative Ideas": {
       introduction:
@@ -1604,6 +1647,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://www.datocms-assets.com/64859/1700699597-creative-thinking-techniques-nurturing-innovation-for-academic-success-1700699597718.png?q=70&auto=format&w=1280",
+      ],
     },
     Mindfulness: {
       introduction:
@@ -1716,6 +1762,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health"],
+      images: [
+        "https://scitechdaily.com/images/Mindfulness-Relaxed-Zen-Art-Concept.jpg",
+      ],
     },
     "Healthy Eating": {
       introduction:
@@ -1800,6 +1849,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health", "Lifestyle"],
+      images: [
+        "https://jackcityfitness.com/wp-content/uploads/shutterstock_1351783832-1.jpg",
+      ],
     },
     "Stress Management": {
       introduction:
@@ -1887,6 +1939,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Lifestyle"],
+      images: [
+        "https://providencemedicalassociates.org/wp-content/uploads/2023/07/stress-1.jpg",
+      ],
     },
     "Effective Communication": {
       introduction:
@@ -1975,6 +2030,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://assets.entrepreneur.com/content/3x2/2000/1638079565-Untitleddesign-2021-11-28T100532825.png?format=pjeg&auto=webp&crop=4:3",
+      ],
     },
     "Time Management Best": {
       introduction:
@@ -2065,6 +2123,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://www.businessmind.at/wp-content/uploads/2023/03/timemanagement.jpg",
+      ],
     },
     "Digital Detox Best": {
       introduction:
@@ -2150,6 +2211,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Tech", "Information"],
+      images: [
+        "https://media.licdn.com/dms/image/D5612AQEl3yfSYwCIpw/article-cover_image-shrink_600_2000/0/1719742552865?e=2147483647&v=beta&t=w9AOdwvOv7gt96qw-L_YyRIxsz89csFzJkh2KgTlihU",
+      ],
     },
     "Emotional Intelligence": {
       introduction:
@@ -2250,6 +2314,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Tech", "Information"],
+      images: [
+        "https://thinkpsych.com/cdn/shop/articles/five-components-of-emotional-intelligence-scaled.jpg?v=1707280492",
+      ],
     },
     "Sustainable Living: Making Eco-Friendly Choices": {
       introduction:
@@ -2334,6 +2401,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health"],
+      images: [
+        "https://cdn-kabof.nitrocdn.com/nfjHFOYSVknMSLxSPIZUhvuJiKcRMGGc/assets/images/optimized/rev-e8eae3c/advertisingweek.com/wp-content/uploads/2022/03/169environment-concept-globe-glass-in-green-forest-with-sunlight-picture-id1309463809.jpg",
+      ],
     },
     "Creative Thinking: Unlocking Your Innovative Potential": {
       introduction:
@@ -2418,6 +2488,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/13998/images/ba5f3ee-2b02-a37b-aae5-3878873d5400_2.png",
+      ],
     },
     "Mindfulness: Cultivating Present-Moment Awareness": {
       introduction:
@@ -2490,6 +2563,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://www.crossidentity.com/wp-content/uploads/2023/06/The-Power-of-Mindfulness-Meditation-Cultivating-Present-Moment-Awareness.jpg",
+      ],
     },
     "Healthy Eating Best": {
       introduction:
@@ -2562,6 +2638,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health"],
+      images: [
+        "https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563",
+      ],
     },
     "Personal Finance": {
       introduction:
@@ -2647,6 +2726,7 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information", "Finance", "Lifestyle"],
+      images: ["https://www.moneyedge.co.in/images/blog/budget-blog-52.jpg"],
     },
     "Stress Management Best": {
       introduction:
@@ -2728,6 +2808,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Health", "Information"],
+      images: [
+        "https://www.hss.edu/images/socialmedia/managing-stress-1200x630.jpg",
+      ],
     },
     "Effective Communication Best": {
       introduction:
@@ -2812,6 +2895,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://www.alert-software.com/hs-fs/hubfs/communication%20best%20practices%20in%20the%20workplace.png?width=1280&name=communication%20best%20practices%20in%20the%20workplace.png",
+      ],
     },
     "Resilience: Building Strength in the Face of Adversity": {
       introduction:
@@ -2896,6 +2982,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://media.licdn.com/dms/image/D4E12AQEoOnTwkYxZBQ/article-cover_image-shrink_720_1280/0/1686851731531?e=2147483647&v=beta&t=oGBMaRPHB_jDNJ-tPQuYFOJ7omOD9UxYYEyXWMntr-8",
+      ],
     },
     "Crisis Management: Navigating Difficult Situations Effectively": {
       introduction:
@@ -2980,6 +3069,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information"],
+      images: [
+        "https://bluetweak.com/wp-content/uploads/2023/12/Crisis-Management-in-Customer-Support_-Navigating-Difficult-Situations-with-Grace.png",
+      ],
     },
     "Healthy Relationships: Fostering Meaningful Connections": {
       introduction:
@@ -3064,6 +3156,9 @@ const useMoviesTableData = create<any>()((set) => ({
         },
       ],
       category: ["Information", "Lifestyle"],
+      images: [
+        "https://media.licdn.com/dms/image/v2/D4D12AQE2yLvvHRhsAA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698843882224?e=2147483647&v=beta&t=kqHo01PtTDubZ2bMN6TI6qwsbnaOC-lkCFTFeUAgEyE",
+      ],
     },
   },
   page: 1,

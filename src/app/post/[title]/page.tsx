@@ -1,7 +1,7 @@
 "use client";
-
 import { useMoviesTableData } from "@/action/globalStore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -15,6 +15,7 @@ export default function Details() {
   const [singleData, setSingleData] = useState({
     introduction: "",
     topics: [],
+    images: [],
   });
 
   useEffect(() => {
@@ -41,6 +42,19 @@ export default function Details() {
     <>
       <div className="flex ">
         <div className="w-2/3">
+          <div className="w-2/3 m-auto  ">
+            <Image
+              src={singleData?.images[0]}
+              alt={
+                Object.keys(data).filter(
+                  (key) => key.replace(/ /g, "-") === id.replace(/%3A/g, ":")
+                )[0]
+              }
+              width={1500}
+              height={800}
+              object-fit="fill"
+            />
+          </div>
           <div className="width-full max-w-2xl mx-auto px-4 py-16" key={id}>
             <h1 className="text-4xl pb-10 text-gray-950 font-extrabold  ">
               {
