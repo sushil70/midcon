@@ -1,14 +1,22 @@
 "use client";
-import { useMoviesTableData } from "@/action/globalStore";
+import { useMoviesTableData, useRedirectData } from "@/action/globalStore";
+import { decryptData } from "@/app/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function Details() {
+  const intervalRef = useRef<any>();
+  const route = useRouter();
   const params = useParams();
   const id: any = params.title;
+  const searchParam = useSearchParams();
+  const searchId = searchParam.get("id");
+
+  const { setRedirectData, redirectData } = useRedirectData();
 
   const { data }: { data: { [key: string]: any } } = useMoviesTableData();
 
@@ -17,6 +25,16 @@ export default function Details() {
     topics: [],
     images: [],
   });
+  const [countdown, setCountdown] = useState<any>(10);
+
+  useEffect(() => {
+    setRedirectData("");
+    setSuggestedData(
+      Object.keys(data)
+        .sort(() => 0.5 - Math.random()) // Shuffle array
+        .slice(0, 4)
+    );
+  }, []);
 
   useEffect(() => {
     setSingleData(
@@ -28,20 +46,64 @@ export default function Details() {
     );
   }, [data, id]);
 
+  useEffect(() => {
+    const redirect = async () => {
+      if (searchId) {
+        console.log("searchId", searchId, searchId.split("."));
+        const data = await decryptData(
+          searchId.split(".")[0],
+          searchId.split(".")[1]
+        );
+        console.log("data", data);
+        setRedirectData(data);
+        route.push(window.location.pathname);
+      }
+    };
+
+    redirect();
+  }, [searchId]);
+
   const [suggestedData, setSuggestedData] = useState<string[]>([]);
 
   useEffect(() => {
-    setSuggestedData(
-      Object.keys(data)
-        .sort(() => 0.5 - Math.random()) // Shuffle array
-        .slice(0, 4)
-    );
-  }, []);
+    if (countdown <= 0) {
+      clearInterval(intervalRef.current);
+    }
+  }, [countdown]);
 
   return (
     <>
       <div className="flex ">
         <div className="w-2/3">
+          {redirectData && countdown === 10 ? (
+            <div>
+              Please Click On Continue Button to Verify Yourself !
+              <Button
+                onClick={() => {
+                  intervalRef.current = setInterval(() => {
+                    setCountdown(
+                      (startCountdown: number) => startCountdown - 1
+                    );
+                  }, 1000); // every 1 second
+                }}
+              >
+                Click to Continue
+              </Button>
+            </div>
+          ) : redirectData && countdown !== 0 ? (
+            <div>Generating Link ! Please Wait... {countdown}</div>
+          ) : redirectData && countdown === 0 ? (
+            <Link
+              href="https://www.cpmrevenuegate.com/vwrnu7j3i?key=88b640274ca08379c1400d8b92be5d92"
+              onClick={() => {
+                window.open(redirectData, "_blank");
+              }}
+            >
+              Get Link
+            </Link>
+          ) : (
+            ""
+          )}
           <div className="w-2/3 m-auto  ">
             <Image
               src={singleData?.images[0]}

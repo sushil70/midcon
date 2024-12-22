@@ -3165,4 +3165,9 @@ const useMoviesTableData = create<any>()((set) => ({
   setPage: (value: any) => set(() => ({ page: value })),
 }));
 
-export { useMoviesTableData };
+const useRedirectData = create<any>()((set) => ({
+  redirectData: "",
+  setRedirectData: (value: any) => set(() => ({ redirectData: value })),
+}));
+
+export { useMoviesTableData, useRedirectData };
