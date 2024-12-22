@@ -75,32 +75,46 @@ export default function Details() {
     <>
       <div className="flex ">
         <div className="w-2/3">
-          {redirectData && countdown === 10 ? (
-            <div>
-              Please Click On Continue Button to Verify Yourself !
-              <Button
-                onClick={() => {
-                  intervalRef.current = setInterval(() => {
-                    setCountdown(
-                      (startCountdown: number) => startCountdown - 1
-                    );
-                  }, 1000); // every 1 second
-                }}
-              >
-                Click to Continue
-              </Button>
+          {redirectData ? (
+            <div className="flex justify-center flex-wrap m-10">
+              {countdown === 10 ? (
+                <>
+                  <div className="w-full text-center mb-5">
+                    Please Click On Continue Button to Verify Yourself !
+                  </div>
+                  <Button
+                    onClick={() => {
+                      intervalRef.current = setInterval(() => {
+                        setCountdown(
+                          (startCountdown: number) => startCountdown - 1
+                        );
+                      }, 1000); // every 1 second
+                    }}
+                  >
+                    Click to Continue
+                  </Button>
+                </>
+              ) : countdown !== 0 ? (
+                <div>Generating Link ! Please Wait... {countdown}</div>
+              ) : countdown === 0 ? (
+                <>
+                  <div className="w-full text-center mb-5">
+                    Click Below to Get Link
+                  </div>
+                  <Link
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    href="https://www.cpmrevenuegate.com/vwrnu7j3i?key=88b640274ca08379c1400d8b92be5d92"
+                    onClick={() => {
+                      window.open(redirectData, "_blank");
+                    }}
+                  >
+                    Get Link
+                  </Link>
+                </>
+              ) : (
+                ""
+              )}
             </div>
-          ) : redirectData && countdown !== 0 ? (
-            <div>Generating Link ! Please Wait... {countdown}</div>
-          ) : redirectData && countdown === 0 ? (
-            <Link
-              href="https://www.cpmrevenuegate.com/vwrnu7j3i?key=88b640274ca08379c1400d8b92be5d92"
-              onClick={() => {
-                window.open(redirectData, "_blank");
-              }}
-            >
-              Get Link
-            </Link>
           ) : (
             ""
           )}
